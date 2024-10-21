@@ -1,0 +1,54 @@
+server/
+│
+├── config/
+│   ├── auth.js                                     // OAuth & passport configuration
+│   ├── passport.js                                 // Centralize passport strategies
+│   ├── secretkeys.js                               // Store secret keys (use env vars in production)
+│   └── dbConfig.js                                 // Database connection logic
+│
+├── controllers/
+│   ├── auth/                                       // Auth folder
+│   │   └── GoogleAuthController.js                 // Auth controller handling Google OAuth
+│   ├── customer/                                   // Folder for customer controllers
+│   │   ├── CustomerController.js                   // Customer controller
+│   │   └── ProductController.js                    // Product controller
+│   └── vendor/                                     // Vendor folder
+│       ├── VendorProductController.js              // Vendor product controller
+│       └── VendorProductCategoriesController.js     // Vendor categories controller
+│
+├── middlewares/                                    // Auth and RBAC middleware
+│   └── authMiddleware.js                           // JWT validation, RBAC access control
+│
+├── models/                                         //  models
+│   ├── User.js                                     // user model
+│   └── Vendor.js                                   // Vendor model
+│   └── Cart.js 
+│   └── Product.js 
+│   └── Order.js 
+│   └── address.js 
+│   └── coupons.js
+│   └── rating.js
+│   └── category.js
+│   └── subcategory.js
+│   └── Vendor.j 
+│ 
+├── routes/
+│   ├── auth/                                       // Auth routes
+│   │   └── authRoutes.js                           // Auth routes for OAuth and token handling
+│   ├── customer/                                   // Customer routes
+│   │   ├── customerRoutes.js                       // Customer-specific routes
+│   │   └── productRoutes.js                        // Product-specific routes
+│   └── vendor/                                     // Vendor routes
+│       ├── VendorProductCategoriesRoutes.js        // Vendor categories routes
+│       └── VendorProductsRoutes.js                 // Vendor products routes
+│
+├── utils/
+│   ├── jwtHelper.js                                // JWT generation & verification
+│   └── errorHandler.js                             // Error handler utility
+├── service/
+│   ├── CartService.js                                
+│
+├── .env                                            // Environment variables (secrets, keys)
+├── server.js                                       // Entry point (Express setup)
+└── package.json                                    // Project dependencies
+   

@@ -1,0 +1,204 @@
+/* Base Styles (Mobile First) */
+.search-results-container {
+    padding: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack filters and products vertically on mobile */
+}
+
+.filter-section {
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 20px; /* Space between filter and products */
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #f9f9f9;
+    position: sticky;
+    top: 20px; /* Sticky filter for scrolling */
+}
+
+.filter-section h2 {
+    margin-bottom: 15px;
+}
+
+.filter-section label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.filter-section input {
+    padding: 5px;
+    margin-left: 10px;
+    width: calc(100% - 20px); /* Make inputs full-width with some padding */
+}
+
+/* Active Filters */
+.active-filters {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filter-chip {
+    display: inline-block;
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+.filter-chip button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+    color: red;
+}
+
+/* Product grid using flexbox for horizontal row layout */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow products to wrap into rows */
+    gap: 15px; /* Space between items */
+    padding-right: 10px; /* Extra padding for layout */
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s;
+    max-width: 160px; /* Reduced max width */
+    flex: 0 0 auto; /* Ensure items don’t stretch */
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: 150px; /* Reduced image height */
+    object-fit: cover;
+}
+
+.product-item h4 {
+    font-size: 14px; /* Smaller font for better alignment */
+    margin: 10px 0;
+}
+
+.product-item p {
+    font-size: 12px; /* Adjust text size */
+    margin: 5px 0;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination button:hover {
+    background-color: #555;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .content-wrapper {
+        flex-direction: row; /* Align filters and products side by side */
+    }
+
+    .filter-section {
+        width: 20%; /* Adjust width for tablets */
+        margin-right: 20px;
+    }
+
+    .product-grid {
+        justify-content: space-between; /* Spread items across the row */
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .filter-section {
+        width: 25%;
+    }
+
+    .product-grid {
+        justify-content: space-between; /* Spread items across the row */
+    }
+}
+
+/* Large Screen Styles */
+@media (min-width: 1440px) {
+    .filter-section {
+        width: 20%; 
+    }
+
+    .product-grid {
+        justify-content: space-between; /* Spread items across the row */
+    }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.back-to-top button {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.back-to-top button:hover {
+    background-color: #555;
+}
+
+/* Loader Styles */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.loader span {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #333;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

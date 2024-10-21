@@ -1,0 +1,108 @@
+client/
+│
+├── assets/                       # Static assets like fonts and images 
+│   ├── fonts.js                  # Font-related assets
+│   ├── images.js                 # Image-related assets
+│
+├── components/                   # Reusable UI components
+│   ├── auth/                     # Authentication components
+│   │   ├── GoogleCallback.js      # Google OAuth callback handler
+│   │   ├── LoginForm.js           # Login form component
+│   │   ├── VendorLoginForm.js     # Vendor login form component
+│   │   ├── VendorSignupForm.js    # Vendor signup form component
+│   ├── customer/                 # Customer-related components
+│   │   ├── cart/                 # Shopping cart components
+│   │   │   ├── cartItems.js       # List of items in the cart
+│   │   │   ├── cartSummary.js     # Summary of the cart's contents and prices
+│   │   ├── Home/                 # Home page components
+│   │   │   ├── FeaturedProducts.js # Display featured products on the homepage
+│   │   ├── Orders/               # Components for managing orders
+│   │   │   ├── OrderDetails.js    # Order details view
+│   │   │   ├── OrderList.js       # List of customer orders
+│   │   ├── products/             # Product-related components
+│   │   │   ├── ProductDetails.js  # Display detailed product information
+│   │   │   ├── ProductSearch.js   # Product search functionality
+│   │   ├── Profile/              # Customer profile components
+│   │   │   ├── UserProfile.js     # Displays customer profile information
+│   │   ├── Footer.js             # Footer component
+│   │   ├── Navbar.js             # Navbar component
+│   │   ├── PrivateRoute.js       # Private route component for authenticated users
+│   │   ├── WishlistItems.js      # Display items in customer's wishlist
+│   ├── vendor/                   # Vendor-related components (structure not fully shown)
+│   ├── carousel/                 # Carousel components
+│   │   ├── ImageCarousel.jsx      # Image carousel component
+│   ├── imageupload/              # Components for image uploading
+│   │   ├── ImageUpload.js         # Image upload form
+│   ├── shared/                   # Shared components across the app
+│   │   ├── BackToTopButton.jsx    # Back to top button
+│   │   ├── Button.js              # Reusable button component
+│   │   ├── ErrorBoundary.jsx      # Error boundary for catching and displaying errors
+│   │   ├── Loader.jsx             # Loading spinner component
+│   │   ├── Modal.js               # Reusable modal component
+│
+├── config/                       # Configuration files
+│   ├── firebaseConfig.js         # Firebase configuration
+│
+├── context/                      # Context API for managing global states
+│   ├── AuthContext.js            # Auth-related global state
+│   ├── CartContext.js            # Cart-related global state
+│   ├── ProductContext.js         # Product-related global state
+│   ├── VendorAuthContext.jsx     # Vendor authentication global state
+│
+├── hooks/                        # Custom hooks for reusable logic
+│   ├── useAuth.js                # Custom hook for authentication
+│   ├── useCart.js                # Custom hook for cart management
+│   ├── useDebounce.js            # Debounce hook for input optimization
+│   ├── useFetch.js               # Custom hook for fetching data
+│
+├── layouts/                      # Layout components for structuring different pages
+│   ├── CustomerLayout.jsx        # Layout for customer pages
+│   ├── VendorLayout.jsx          # Layout for vendor pages
+│
+├── pages/                        # Main pages of the application
+│   ├── auth/                     # Authentication pages
+│   │   ├── Login.js               # User login page
+│   │   ├── Profile.js             # Profile page
+│   │   ├── Signup.js              # Signup page
+│   │   ├── VendorLogin.jsx        # Vendor login page
+│   │   ├── VendorSignup.jsx       # Vendor signup page
+│   ├── customer/                 # Customer-facing pages
+│   │   ├── Cart.js                # Shopping cart page
+│   │   ├── Checkout.js            # Checkout page
+│   │   ├── FailurePage.js         # Payment failure page
+│   │   ├── Home.jsx               # Customer home page
+│   │   ├── MyOrders.js            # Customer order history page
+│   │   ├── Products.js            # Product listing page
+│   │   ├── SuccessPage.js         # Payment success page
+│   │   ├── Wishlist.js            # Customer wishlist page
+│   ├── vendor/                   # Vendor-facing pages
+│   │   ├── Dashboard.js           # Vendor dashboard page
+│   │   ├── ManageProducts.js      # Page to manage vendor products
+│   │   ├── ManageUsers.js         # Page to manage vendor users
+│   │   ├── OrdersManagement.js    # Page to manage vendor orders
+│
+├── routes/                       # Routing setup for the application
+│   ├── CustomerRoutes.jsx        # Routes for customer-specific pages
+│   ├── VendorRoutes.jsx          # Routes for vendor-specific pages
+│
+├── services/                     # API service files for interacting with the backend
+│   ├── customer/                 # Services related to customer functionality
+│   │   ├── AddressService.js      # Service for managing customer addresses
+│   │   ├── AuthService.js      # Service for managing customer auth
+│   │   ├── CartService.js      # Service for managing customer cart
+│   │   ├── OrderService.js      # Service for managing OrderService
+│   │   ├── ProductService.js      # Service for managing ProductService
+│   ├── vendor/                 # Services related to vendor functionality
+│   │   ├── AuthService.js      # Service for managing vendor auth
+│   │   ├── VendorDetailsService.js      # Service for managing VendorDetailsService
+│   │   ├── VendorProductsService.js      # Service for managing VendorProductsService
+│
+├── styles/                       # CSS or SCSS files (contents not shown)
+│
+├── utils/                        # Utility/helper functions (contents not shown)
+│
+├── .env                          # Environment variables
+├── app.js                        # Main application file
+├── index.js                      # Entry point of the React app
+└── package.json                  # Node package dependencies and scripts
+ 

@@ -1,0 +1,191 @@
+/* Checkout Container */
+.checkout-page {
+    max-width: 700px; /* Restricting width for better readability */ 
+    margin: 40px auto; /* Centering with some margin */
+    padding: 20px;
+    background-color: #ffffff; /* White background for checkout area */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s; /* Transition for hover effect */
+}
+
+.card-element-container {
+    padding: 40px;
+    background-color: #ffffff; /* White background for checkout area */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s; /* Transition for hover effect */
+}
+
+/* Hover effect for desktop */
+.checkout-page:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Hover effect */
+}
+
+/* Responsive Design for Mobile First */
+.address-section,
+.payment-section {
+    display: flex;
+    flex-direction: column; /* Stacking elements vertically on mobile */
+    margin-bottom: 20px;
+}
+
+/* Payment Section Styles */
+.payment-section {
+    background: #f9f9f9; /* Light background for payment section */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding for comfort */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Card Element Styles */
+.CardElement {
+    border: 1px solid #ddd; /* Border for CardElement */
+    padding: 10px; /* Padding for comfort */
+    border-radius: 5px; /* Rounded edges */
+    transition: border 0.3s; /* Transition for border color change */
+}
+
+.CardElement:focus {
+    border-color: #007BFF; /* Change border color on focus */
+}
+
+/* Address List Styles */
+.address-list {
+    display: flex;
+    flex-direction: column; /* Stack address items vertically */
+}
+
+.address-item {
+    margin: 10px 0; /* Spacing between address items */
+    padding: 15px; /* Increased padding for comfort */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded edges */
+    transition: background-color 0.3s; /* Transition for hover effect */
+    display: flex; /* Flex display for address items */
+    justify-content: space-between; /* Space between name and address details */
+    align-items: center; /* Center items vertically */
+    cursor: pointer; /* Pointer cursor for clickable items */
+}
+
+.address-item.selected {
+    background-color: #e9ecef; /* Highlight selected address */
+    border: 1px solid #007BFF; /* Change border color for selected */
+}
+
+.address-item:hover {
+    background-color: #f1f1f1; /* Hover effect */
+}
+
+/* Order Summary Styles */
+.order-summary {
+    margin: 20px 0; /* Margin for separation */
+    padding: 15px; /* Padding for comfort */
+    background-color: #f9f9f9; /* Light background for summary */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded edges */
+}
+
+/* Address and Payment Container */
+.address-payment-container {
+    display: flex;
+    flex-direction: column; /* Stack sections on smaller screens */
+}
+
+/* Responsive Design for Larger Screens */
+@media (min-width: 600px) {
+    .checkout-page {
+        padding: 30px; /* Increase padding for larger screens */
+    }
+
+    .address-payment-container {
+        flex-direction: row; /* Align sections side by side on larger screens */
+        justify-content: space-between; /* Space between sections */
+    }
+
+    .address-section,
+    .payment-section {
+        flex: 1; /* Allow address section to grow */
+        margin-right: 20px; /* Space between sections */
+    }
+
+    .payment-section {
+        margin-left: 20px; /* Space between sections */
+    }
+}
+
+/* Tablet and Larger Screens */
+@media (min-width: 768px) {
+    .address-section,
+    .payment-section {
+        padding: 20px; /* Extra padding for larger screens */
+    }
+
+    .payment-section {
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2); /* Increased shadow for bigger screens */
+    }
+}
+
+/* Laptop and Larger Screens */
+@media (min-width: 1024px) {
+    .checkout-page {
+        max-width: 900px; /* Wider container for larger screens */
+    }
+
+    .order-summary {
+        font-size: 1.1em; /* Slightly larger text for summary */
+    }
+
+    /* Payment Button Styles */
+    button[type="submit"] {
+        background-color: #007BFF; /* Primary color for button */
+        color: white; /* White text */
+        padding: 10px 15px; /* Padding for comfort */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded edges */
+        cursor: pointer; /* Pointer cursor */
+        transition: background-color 0.3s; /* Transition for hover effect */
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+
+    button[type="button"] {
+        background-color: #f0ad4e; /* Secondary color for button */
+        color: white; /* White text */
+        padding: 10px 15px; /* Padding for comfort */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded edges */
+        cursor: pointer; /* Pointer cursor */
+        transition: background-color 0.3s; /* Transition for hover effect */
+    }
+
+    button[type="button"]:hover {
+        background-color: #ec971f; /* Darker shade on hover */
+    }
+}
+
+/* Styles for Radio Buttons */
+input[type="radio"] {
+    margin-right: 10px; /* Spacing between radio button and label */
+}
+
+/* Styles for Select Menu */
+select {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding for comfort */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded edges */
+    background-color: white; /* White background */
+    color: #32325d; /* Text color */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+select:focus {
+    border-color: #007BFF; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+ 

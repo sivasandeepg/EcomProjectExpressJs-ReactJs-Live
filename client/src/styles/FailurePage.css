@@ -1,0 +1,37 @@
+.failure-page {
+    text-align: center;
+    margin: 100px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #f8d7da; /* Light red background */
+    border: 1px solid #f5c6cb; /* Border matching the background */
+    border-radius: 10px;
+    color: #721c24; /* Dark red text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.failure-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.failure-page p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.failure-page button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #dc3545; /* Bootstrap's danger color for a red button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.failure-page button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+  

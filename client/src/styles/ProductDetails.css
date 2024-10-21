@@ -1,0 +1,182 @@
+.product-details-container {
+  display: flex;
+  flex-direction: column; /* Stack vertically on mobile */
+  margin: 20px;
+  gap: 20px; /* Add space between image and info sections */
+}
+
+/* Flex container for larger screens */
+@media (min-width: 768px) {
+  .product-details-container {
+    flex-direction: row; /* Horizontal layout on larger screens */
+    gap: 40px; /* Add more space between sections on larger screens */
+  }
+}
+
+.product-images {
+  flex: 1;
+  margin-right: 0; /* Remove margin for mobile */
+  display: flex;
+  flex-direction: column; /* Ensure images and controls stack vertically */
+  align-items: center;
+}
+
+.main-image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+}
+
+.main-image-container img {
+  width: 100%; /* Responsive width */
+  max-width: 450px; /* Increased max-width for larger displays */
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for better focus */
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly increased transparency */
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  z-index: 1;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.arrow:hover {
+  background-color: rgba(255, 255, 255, 1); /* Solid background on hover */
+}
+
+.additional-images {
+  display: flex;
+  margin-top: 10px;
+  overflow-x: auto;
+  padding: 10px 0;
+  gap: 10px; /* Uniform spacing between additional images */
+}
+
+.additional-image-card {
+  flex: 0 0 auto;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+}
+
+.additional-image-card:hover {
+  border: 1px solid #457b9d;
+}
+
+.additional-image-card img {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between product details */
+}
+
+.product-info h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.price {
+  font-size: 24px;
+  color: #e63946;
+  font-weight: bold;
+}
+
+.quantity-selection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quantity-selection h4 {
+  font-size: 18px;
+}
+
+.quantity-selection input {
+  padding: 5px;
+  width: 60px;
+  text-align: center;
+}
+
+.add-to-cart {
+  padding: 12px 24px;
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #2a9d8f;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  .product-details-container {
+    margin: 10px;
+    gap: 15px; /* Reduced gap for mobile */
+  }
+
+  .main-image-container img {
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .arrow {
+    font-size: 18px; /* Smaller arrows on mobile */
+  }
+
+  .additional-image-card img {
+    width: 60px; /* Adjust size of additional images */
+  }
+
+  .product-info h1 {
+    font-size: 24px; /* Adjust header size for mobile */
+  }
+
+  .price {
+    font-size: 20px; /* Adjust price font size for mobile */
+  }
+
+  .quantity-selection input {
+    width: 50px; /* Adjust input size for mobile */
+  }
+
+  .add-to-cart {
+    font-size: 16px; /* Adjust button size for mobile */
+    padding: 10px 20px;
+  }
+}
+   

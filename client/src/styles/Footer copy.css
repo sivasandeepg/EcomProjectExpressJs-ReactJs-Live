@@ -1,0 +1,77 @@
+/* src/components/shared/Footer.css */
+:root {
+    --primary-color: #0a386a;
+    --secondary-color: #f4f4f4;
+  }  
+.footer {
+  background-color: var(--primary-color);
+    padding: 40px 20px;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+  }
+  
+  .footer-section h4  {
+    margin-bottom: 15px;
+    color: #d1c4c4;
+  }
+  
+  .footer-section p  {
+    color: #e8e3e3;
+  }
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+    color: #e8e3e3;
+  }
+
+  
+  .footer-section ul li a {
+    text-decoration: none;
+    color: #c8bcbc;
+    transition: color 0.3s;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #a1abb7;
+  } 
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    color: #dac7c7;
+  }
+  
+  .social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons li a {
+    font-size: 20px;
+    color: #f0e6e6;
+    transition: color 0.3s;
+  }
+  
+  .social-icons li a:hover {
+    color: #b1bbc6;
+  }
+      

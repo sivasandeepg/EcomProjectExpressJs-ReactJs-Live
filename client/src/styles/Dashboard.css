@@ -1,0 +1,36 @@
+.admin-dashboard {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.dashboard-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.stat-card:first-child {
+  margin-left: 0;
+}
+
+.stat-card:last-child {
+  margin-right: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+ 

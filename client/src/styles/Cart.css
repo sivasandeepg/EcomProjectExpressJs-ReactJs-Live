@@ -1,0 +1,155 @@
+/* Cart Page Styles */
+.cart-page {
+    padding: 20px;
+    max-width: 900px; /* Max width for larger screens */
+    margin: auto; /* Center the cart */
+    background-color: #f7f9fc; /* Light background for the entire page */
+    border-radius: 10px; /* Rounded edges for the cart page */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Cart Items Section */
+.cart-items {
+    margin-bottom: 20px;
+}
+
+/* Cart Item Styles */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid #ddd; /* Light border for item */
+    border-radius: 8px; /* Rounded edges */
+    padding: 15px; /* More padding for comfort */
+    background-color: #ffffff; /* White background for items */
+    transition: box-shadow 0.3s; /* Transition for shadow effect */
+}
+
+.cart-item:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
+}
+
+/* Cart Item Image */
+.cart-item img {
+    max-width: 100px; /* Fixed width for image */
+    border-radius: 5px; /* Rounded edges for images */
+}
+
+/* Cart Item Details */
+.cart-item-details {
+    flex-grow: 1; /* Allow details to grow */
+    margin-left: 15px; /* Space between image and details */
+}
+
+/* Quantity Controls */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Space above controls */
+}
+
+.quantity-controls button {
+    background-color: #007BFF; /* Primary button color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded edges */
+    padding: 5px 10px; /* Padding for comfort */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Transition for hover effect */
+    margin: 0 5px; /* Space between increment and decrement buttons */
+    min-width: 40px; /* Minimum width for buttons */
+}
+
+.quantity-controls button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Cart Summary Styles */
+.cart-summary {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff; /* White background for summary */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded edges */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Button Styles */
+.cart-summary button {
+    background-color: #007BFF; /* Primary button color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded edges */
+    padding: 10px 15px; /* Padding for comfort */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Transition for hover effect */
+    margin-right: 10px; /* Space between buttons */
+}
+
+.cart-summary button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Coupon Section Styles */
+.coupon-section {
+    margin-top: 20px; /* Space above coupon section */
+    display: flex; /* Flex layout */
+    align-items: center; /* Center items vertically */
+}
+
+.coupon-section input {
+    flex-grow: 1; /* Input takes available space */
+    padding: 10px; /* Padding for comfort */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded edges */
+    margin-right: 10px; /* Space between input and button */
+}
+
+.coupon-section button {
+    background-color: #f0ad4e; /* Secondary button color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded edges */
+    padding: 10px 15px; /* Padding for comfort */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.coupon-section button:hover {
+    background-color: #ec971f; /* Darker shade on hover */
+}
+
+/* Responsive Design for Tablets and Larger Screens */
+@media (min-width: 600px) {
+    .cart-item {
+        padding: 20px; /* Increase padding for larger screens */
+    }
+
+    .cart-summary {
+        font-size: 1.1em; /* Slightly larger text for summary */
+    }
+}
+
+@media (min-width: 768px) {
+    .cart-item {
+        flex-direction: row; /* Keep items in a row for larger screens */
+    }
+
+    .cart-item img {
+        max-width: 120px; /* Adjust image size for tablets */
+    }
+
+    .cart-summary {
+        display: flex; /* Flex layout for summary */
+        justify-content: space-between; /* Space out summary items */
+        align-items: center; /* Center items vertically */
+    }
+}
+
+@media (min-width: 1024px) {
+    .cart-page {
+        padding: 40px; /* Increase padding for larger screens */
+    }
+}
+ 

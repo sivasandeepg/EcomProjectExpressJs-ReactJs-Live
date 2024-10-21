@@ -1,0 +1,58 @@
+/* ProductTable.css */
+
+/* General table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd; /* Border color */
+}
+
+/* Header styles */
+th {
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333; /* Dark text */
+}
+
+/* Row hover effect */
+tr:hover {
+    background-color: #f1f1f1; /* Slightly darker grey on hover */
+}
+
+/* Button styles */
+button {
+    padding: 8px 12px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9; /* Slight transparency on hover */
+}
+
+/* Error message style */
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Optional: Responsive styles */
+@media (max-width: 600px) {
+    table {
+        font-size: 14px; /* Smaller text on mobile */
+    }
+    
+    th, td {
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+}
+ 

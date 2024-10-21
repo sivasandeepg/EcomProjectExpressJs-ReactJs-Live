@@ -1,0 +1,135 @@
+/* Mobile-first styles */
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0; /* No padding for mobile */
+  overflow: hidden;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  right: 5px;
+  width: calc(100% - 10px);
+  z-index: 1;
+  padding: 0;
+}
+
+/* Individual Card */
+.card {
+  flex: 1;
+  margin: 0 2px; /* Reduced margin for mobile */
+  background-color: rgba(243, 240, 240, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px); /* Subtle hover effect */
+}
+
+.card-link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Adjust text (alt) size for mobile */
+.card-link h3 {
+  font-size: 14px; /* Smaller text size for mobile */
+  margin-top: 8px; /* Some space between the image and the text */
+  color: #333;
+}
+
+/* Carousel Slide */
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image {
+  width: 100%;
+  max-height: 300px; /* Adjusted height for mobile */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Slick Dots */
+.slick-dots {
+  bottom: 5px;
+}
+
+.slick-dots li button:before {
+  color: #007bff;
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #007bff;
+}
+
+/* Media Queries for Larger Screens */
+
+/* Tablet Devices */
+@media (min-width: 600px) {
+  .card-container {
+    bottom: 15px;
+    left: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .card {
+    margin: 0 4px; /* Slightly larger gap between cards */
+  }
+
+  .carousel-image {
+    max-height: 400px;
+  }
+
+  /* Adjust text size for tablets */
+  .card-link h3 {
+    font-size: 16px;
+  }
+}
+
+/* Desktop Devices */
+@media (min-width: 1024px) {
+  .card-container {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+  }
+
+  .card {
+    margin: 0 8px; /* Larger gap between cards for desktop */
+  }
+
+  .carousel-image {
+    max-height: 500px;
+  }
+
+  /* Adjust text size for desktops */
+  .card-link h3 {
+    font-size: 18px;
+  }
+}
+  
