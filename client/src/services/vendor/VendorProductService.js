@@ -1,9 +1,11 @@
 import axios from 'axios';
-
-// Base URLs for the API
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/admin/products';
-const API_URL_FOR_CATEGORIES = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/admin/ProductCategories';
-
+ 
+// Base URLs for the API 
+// const EXPRESS_BASE_URL = process.env.API_BASE_URL||process.env.LOCAL_API_BASE_URL; 
+const EXPRESS_BASE_URL = 'https://ecomproject-expressjs-live.onrender.com';       
+const API_URL = `${EXPRESS_BASE_URL}/api/admin/products` ;
+const API_URL_FOR_CATEGORIES = `${EXPRESS_BASE_URL}/api/admin/ProductCategories`;
+  
 // Function to handle API requests with error handling
 const handleRequest = async (request) => {
   try {

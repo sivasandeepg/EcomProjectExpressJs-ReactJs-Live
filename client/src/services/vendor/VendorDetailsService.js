@@ -1,8 +1,10 @@
 import axios from 'axios';
 
 // Base URL for the API, can be configured via environment variables
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/vendor/auth';
-
+// const EXPRESS_BASE_URL = process.env.API_BASE_URL||process.env.LOCAL_API_BASE_URL; 
+const EXPRESS_BASE_URL = 'https://ecomproject-expressjs-live.onrender.com';     
+const API_URL = `${EXPRESS_BASE_URL}/api/vendor/auths` ;
+ 
 // Utility function to get the vendor token from localStorage
 const getVendorToken = () => {
   const vendorDataString = localStorage.getItem('vendor');

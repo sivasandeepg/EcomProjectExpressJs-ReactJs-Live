@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: my-ecommerce-app
+    env: node
+    buildCommand: npm install
+    startCommand: npm run start
+    autoDeploy: true
+    plan: free
+    envVars:
+      MONGO_URI: mongodb+srv://ismartdevp:ismartdevp@cluster-free.vsklr.mongodb.net/e-commerce-live
+      SESSION_SECRET: SivaSandeepRamya
+      NODE_ENV: production
+    routes:
+      - type: static
+        path: /static
+        name: static-files
+ 

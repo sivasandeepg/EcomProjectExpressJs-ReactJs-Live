@@ -57,10 +57,10 @@ const LoginForm = () => {
    };
 
    const handleGoogleLogin = async () => {
-      // window.location.href = `${googleApiUrl}/auth/google/login`; 
-      window.location.href = `http://localhost:5000/auth/google/login`; 
+      // window.location.href = `${googleApiUrl}/auth/google/login`;
+      window.location.href = `https://ecomproject-expressjs-live.onrender.com/auth/login`;   
    };
-   
+    
    return (
       <div className="loginContainer">
          <div className="loginBox">

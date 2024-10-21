@@ -1,7 +1,8 @@
 import axios from 'axios';
-
-const API_URL = 'http://localhost:5000'; // Update this URL to match your backend
-
+// const EXPRESS_BASE_URL = process.env.API_BASE_URL||process.env.LOCAL_API_BASE_URL; 
+const EXPRESS_BASE_URL = 'https://ecomproject-expressjs-live.onrender.com';   
+const API_URL = `${EXPRESS_BASE_URL}`; 
+   
 // Utility function to get the JWT token from localStorage
 const getToken = () => localStorage.getItem('authToken');
 
@@ -41,7 +42,7 @@ const getProfile = async () => {
 
   try {
     // Make a GET request to fetch the user's profile data
-    const response = await axios.get(`${API_URL}/auth/google/currentuser`, config);
+    const response = await axios.get(`${API_URL}/auth/currentuser`, config);
     return response.data; // Return the profile data (user object)
   } catch (error) {
     console.error('Error fetching profile:', error);
@@ -52,7 +53,7 @@ const getProfile = async () => {
 // Function to log in the user and store the token
 const login = async (credentials) => {
   try {
-    const response = await axios.post(`${API_URL}/auth/google/login`, credentials);
+    const response = await axios.post(`${API_URL}/auth/login`, credentials);
     const { token } = response.data;
     setToken(token); // Store token
     return response.data; // Return user data
@@ -67,20 +68,20 @@ const logout = () => {
   removeToken(); // Clear the token from localStorage
   localStorage.removeItem('authToken'); 
 };
-
+  
 // Function to check if the user is authenticated 
 const isAuthenticated = async () => {
   const config = getAuthConfig();
- 
+  
   try {
-    const response = await axios.get(`${API_URL}/auth/isAuthenticated`, config);  
+    const response = await axios.get(`${API_URL}/auth/verify/isAuthenticated`, config);  
     return response.data.isAuthenticated; // Return true or false
   } catch (error) {
     console.error('Error checking authentication status:', error);
     return false; // Return false in case of error
   }
 };
-
+  
 // Export the authentication services
 const AuthServices = {
   getProfile,

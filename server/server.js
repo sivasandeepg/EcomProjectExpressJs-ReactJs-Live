@@ -8,52 +8,48 @@ const MongoStore = require('connect-mongo');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
-//Import routes
-//customer
+// Import routes
 const AuthRoutes = require('./routes/auth/AuthRoutes');
 const isAuthenticatedRoutes = require('./routes/auth/isAuthenticatedRoutes');
 const productRoutes = require('./routes/customer/productRoutes');
-const CartRoutes = require('./routes/customer/CartRoutes'); 
+const CartRoutes = require('./routes/customer/CartRoutes');
 const paymentRoutes = require('./routes/customer/paymentRoutes');
-const addressRoutes = require('./routes/customer/addressRoutes'); 
-const orderRoutes = require('./routes/customer/orderRoutes'); 
-//vendor
-const VendorAuthRoutes = require('./routes/auth/VendorAuthRoutes'); 
+const addressRoutes = require('./routes/customer/addressRoutes');
+const orderRoutes = require('./routes/customer/orderRoutes');
+const VendorAuthRoutes = require('./routes/auth/VendorAuthRoutes');
 const VendorProductsRoutes = require('./routes/vendor/VendorProductsRoutes');
 const VendorProductCategoriesRoutes = require('./routes/vendor/VendorProductCategoriesRoutes');
 const VendorOrdersRoutes = require('./routes/vendor/VendorOrdersRoutes');
-//Import dotenv 
-const {PORT, MONGO_URI, SESSION_SECRET,  } = require('./config/secretkeys');
+const { PORT, MONGO_URI, SESSION_SECRET, FRONTEND_URL, LOCAL_FRONTEND_URL } = require('./config/secretkeys');
 require('./config/passport');
-
 
 // MongoDB Connection
 mongoose.connect(MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.error("MongoDB connection error:", err)); 
- 
+  .catch((err) => console.error("MongoDB connection error:", err));
+
 // Initialize Express app
 const app = express();
- 
+
 // Middleware
 app.use(cors({
   credentials: true,
-  origin: ['http://localhost:3000', 'http://192.168.8.100:3000']
-}));    
+  origin: [ FRONTEND_URL,LOCAL_FRONTEND_URL,] // Update this with your client URL on Render
+}));
+ 
 // Other middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Add cookie-parser middleware
-app.use(cookieParser());  
- 
-    
+app.use(cookieParser());
+
 // Session middleware setup
 app.use(session({
-  name: 'ecommerce.sid', // custome  
-  secret: SESSION_SECRET, // Use a strong secret
-  resave: false, // Prevents session from being saved back to the store if unmodified
-  saveUninitialized: false, // Don't create a session until something is stored
+  name: 'ecommerce.sid',
+  secret: SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
   store: MongoStore.create({
     mongoUrl: MONGO_URI,
     collectionName: 'sessions',
@@ -62,21 +58,18 @@ app.use(session({
   }),
   cookie: {
     maxAge: 86400000, // 1 day
-    secure: false, // Set true if using HTTPS
+    secure: process.env.NODE_ENV === 'production', // Set true if using HTTPS
     httpOnly: true,
-    sameSite: 'lax', 
-
+    sameSite: 'lax',
   }
-}));  
-  
-//session id test 
+}));
+
+// Session ID test
 app.get('/', (req, res) => {
-  req.session.viewCount = (req.session.viewCount || 0) + 1; // Increment view count
-  const sessionId = req.session.id; // Get the session ID 
+  req.session.viewCount = (req.session.viewCount || 0) + 1;
+  const sessionId = req.session.id;
   res.send(`You visited this page ${req.session.viewCount} times. Session ID: ${sessionId}`);
 });
-
-  
 
 // Initialize Passport and use Passport sessions
 app.use(passport.initialize());
@@ -84,26 +77,31 @@ app.use(passport.session());
 
 // Serve static files from the uploads directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
- 
+
 // Use the router for admin products and authentication
-// vendor
 app.use('/api/vendor/auth/', VendorAuthRoutes);
 app.use('/api/admin/products', VendorProductsRoutes);
 app.use('/api/admin/ProductCategories', VendorProductCategoriesRoutes);
-app.use('/api/vendor/vendorOrders', VendorOrdersRoutes);  
-//customer 
-app.use('/auth/google', AuthRoutes);
-app.use('/auth', isAuthenticatedRoutes);
-app.use('/api/addresses', addressRoutes); 
+app.use('/api/vendor/vendorOrders', VendorOrdersRoutes);
+app.use('/auth', AuthRoutes);        
+app.use('/auth/verify', isAuthenticatedRoutes);
+app.use('/api/addresses', addressRoutes);
 app.use('/api/products', productRoutes);
-app.use('/api/cart', CartRoutes); 
+app.use('/api/cart', CartRoutes);
 app.use('/api/payment', paymentRoutes);
-app.use('/api/orders', orderRoutes); 
+app.use('/api/orders', orderRoutes);
 
+// // Serve the static files from the React app
+// app.use(express.static(path.join(__dirname, 'client/build')));
 
-  
+// // The "catchall" handler: for any request that doesn't
+// // match one above, send back React's index.html file.
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+// });  
+
 // Start server 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+const port = process.env.PORT || PORT; // Use Render's port or fallback to local
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
-  

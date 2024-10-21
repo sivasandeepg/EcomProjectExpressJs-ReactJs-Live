@@ -1,7 +1,8 @@
 //Src>services>customer>api>ProductServices.js 
 import axios from 'axios';
-
-const API_BASE_URL = 'http://localhost:5000/api'; 
+const EXPRESS_BASE_URL = 'https://ecomproject-expressjs-live.onrender.com';       
+// const EXPRESS_BASE_URL = process.env.API_BASE_URL||process.env.LOCAL_API_BASE_URL;  
+const API_BASE_URL = `${EXPRESS_BASE_URL}/api` ; 
 
 // Get all products 
 export const getProducts = async (page = 1, limit = 6) => {
@@ -15,7 +16,7 @@ export const getProducts = async (page = 1, limit = 6) => {
   }
 };
 
-  
+
 
 // Get product by ID
 export const getProductById = async (id) => {

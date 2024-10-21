@@ -33,13 +33,13 @@ exports.googleCallback = (req, res, next) => {
       req.session.user = user; // Store user in the session
 
       // Redirect user back to frontend with the token in URL parameters
-      const redirectUrl = `${process.env.FRONTEND_URL}/auth/callback?token=${token}`;
+      const redirectUrl = `${process.env.FRONTEND_URL}/auth/callback?token=${token}`; 
       return res.redirect(redirectUrl);
     });
   })(req, res, next);
 };
   
-
+    
 
 // Get the current authenticated user
 exports.currentUser = (req, res) => {
